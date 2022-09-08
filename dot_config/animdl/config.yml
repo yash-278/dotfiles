@@ -1,0 +1,10 @@
+default_provider: animixplay
+quality_string: best[subtitle]/best
+players:
+  mpv:
+    executable: mpv
+    opts: []
+fzf:
+  executable: fzf
+  opts: []
+  state: true
