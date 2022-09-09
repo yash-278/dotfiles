@@ -1,0 +1,13 @@
+conky.config = {
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = false,
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+    own_window_argb_visual = true, own_window_argb_value = 0,
+
+    double_buffer = true,
+}
+
+conky.text = [[
+${voffset 6}${offset 20}${color0}${font M+ 1mn:size=24}${time %H:%M}${font}${color}
+]];

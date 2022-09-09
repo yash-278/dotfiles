@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Conky Geddy        
+Comment=Run Conky on startup
+Exec=bash -c 'sleep 20 && conky -c ~/.config/conky/geddy/geddy.conkyrc'
+Icon=utilities-terminal
+Terminal=false 
+Type=Application
+Categories=Application;
