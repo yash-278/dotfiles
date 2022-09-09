@@ -1,0 +1,53 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](bold red) "
+
+[username]
+style_user = "magenta bold"
+style_root = "blue bold"
+format = "fedora: [$user]($style) "
+disabled = false
+show_always = true
+
+[git_branch]
+symbol = ""
+style = "bold white"
+format = '[\($symbol$branch\)]($style) '
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+style = " yellow"
+format = "[:$path]($style)[$read_only]($read_only_style) "
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[nodejs]
+format = "via [node $version](bold green) "
+
+[aws]
+format = '[on $symbol($profile )(\($region\) )]($style)'
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 500
+format = "underwent [$duration](bold yellow)"
+
+[git_status]
+# I don't care about untracked files or that there's a stash present.
+untracked = ""
+format = '([\[$conflicted$deleted$renamed$modified$staged$behind\]]($style) )'
+modified = '*'
+
+[custom.tztime]
+command = 'date +"%a %b %d %Y %l:%M%p"'
+when = "true"
+format = '[\[$symbol($output)\]](green) '
+
+
