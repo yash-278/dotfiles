@@ -3,6 +3,8 @@
 # Install Kitty
 sudo dnf install -y kitty
 
+sudo dnf install -y code
+
 # Install NeoVim
 sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo dnf install -y neovim python3-neovim
