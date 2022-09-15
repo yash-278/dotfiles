@@ -1,0 +1,23 @@
+name: LittleCapriceDreams
+sceneByURL:
+  - action: scrapeXPath
+    url:
+      - littlecaprice-dreams.com/project
+    scraper: sceneScraper
+xPathScrapers:
+  sceneScraper:
+    scene:
+      Title: //meta[@property="og:title"]/@content
+      Details: //div[@class="vid_desc"]/p
+      Image: //meta[@property="og:image"]/@content
+      Studio:
+        Name: //meta[@property="og:site_name"]/@content
+      Date:
+        selector: //div[@class="vid_date"]
+        postProcess:
+          - parseDate: January 2, 2006
+      Performers:
+        Name: //div[@class="vid_infos"]/div[contains(div, "Models")]//a
+      Tags:
+        Name: //div[@class="vid_infos"]/div[contains(div, "Tags")]//a
+# Last Updated March 28, 2021
