@@ -20,14 +20,13 @@ defaults:
     sprites: true
   scan_task:
     paths: []
-    usefilemetadata: false
-    stripfileextension: false
-    scangeneratepreviews: true
     scangenerateimagepreviews: true
-    scangeneratesprites: false
     scangeneratephashes: false
+    scangeneratepreviews: true
+    scangeneratesprites: false
     scangeneratethumbnails: false
-    filter: null
+    stripfileextension: false
+    usefilemetadata: false
 generated: /home/ash/.stash/generated
 host: 0.0.0.0
 jwt_secret_key: c42a1cdad2e0d9d51d561436948bf946ab0ddf5c81e0e514305d5fa54adfc3b9
