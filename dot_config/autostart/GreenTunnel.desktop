@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=GreenTunnel        
-Comment=Run GT on startup
-Exec=bash -c 'gt'
-Icon=utilities-terminal
-Terminal=false 
-Type=Application
-Categories=Application;

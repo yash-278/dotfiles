@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo dnf install -y autojump
-
 sudo dnf install -y fzf
 
 sudo dnf install -y imwheel
