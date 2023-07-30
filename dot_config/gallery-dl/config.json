@@ -1,0 +1,1 @@
+{ "extractor": { "filename": "{gallery_id} - {num}.{extension}", "directory": ["{title}"] } }

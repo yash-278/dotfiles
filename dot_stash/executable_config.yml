@@ -1,0 +1,98 @@
+calculate_md5: false
+create_galleries_from_folders: true
+cssenabled: false
+dangerous_allow_public_without_auth: "false"
+database: /home/ash/.stash/stash-go.sqlite
+defaults:
+  generate_task:
+    imagepreviews: true
+    markerids: []
+    markers: true
+    phashes: true
+    previewoptions:
+      previewexcludeend: "0"
+      previewexcludestart: "0"
+      previewpreset: slow
+      previewsegmentduration: 0.75
+      previewsegments: 12
+    previews: true
+    sceneids: []
+    sprites: true
+  scan_task:
+    scangenerateimagepreviews: true
+    scangeneratephashes: false
+    scangeneratepreviews: true
+    scangeneratesprites: false
+    scangeneratethumbnails: true
+    stripfileextension: false
+    usefilemetadata: false
+generated: /home/ash/.stash/generated
+host: 0.0.0.0
+javascriptenabled: false
+jwt_secret_key: c42a1cdad2e0d9d51d561436948bf946ab0ddf5c81e0e514305d5fa54adfc3b9
+no_proxy: localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+nobrowser: false
+notifications_enabled: true
+parallel_tasks: 1
+plugins_path: /home/ash/.stash/plugins
+port: 9999
+preview_audio: true
+preview_exclude_end: "0"
+preview_exclude_start: "0"
+preview_segment_duration: 0.75
+preview_segments: 12
+scrapers_path: /home/ash/.stash/scrapers
+security_tripwire_accessed_from_public_internet: ""
+session_store_key: 2ce187303fb86e9602a9e9116b4f768d5388154d57bdc642ccc99a49d57d412a
+show_one_time_moved_notification: false
+sound_on_preview: false
+stash:
+- excludeimage: false
+  excludevideo: false
+  path: /media/Edrive/Stash
+theme_color: '#191919'
+ui:
+  front_page_content:
+  - __typename: CustomFilter
+    direction: DESC
+    message:
+      id: recently_released_objects
+      values:
+        objects: Scenes
+    mode: SCENES
+    sortBy: date
+  - __typename: CustomFilter
+    direction: DESC
+    message:
+      id: recently_added_objects
+      values:
+        objects: Studios
+    mode: STUDIOS
+    sortBy: created_at
+  - __typename: CustomFilter
+    direction: DESC
+    message:
+      id: recently_released_objects
+      values:
+        objects: Movies
+    mode: MOVIES
+    sortBy: date
+  - __typename: CustomFilter
+    direction: DESC
+    message:
+      id: recently_added_objects
+      values:
+        objects: Performers
+    mode: PERFORMERS
+    sortBy: created_at
+  - __typename: CustomFilter
+    direction: DESC
+    message:
+      id: recently_released_objects
+      values:
+        objects: Galleries
+    mode: GALLERIES
+    sortBy: date
+  last_note_seen: 20220906
+video_file_naming_algorithm: OSHASH
+write_image_thumbnails: true

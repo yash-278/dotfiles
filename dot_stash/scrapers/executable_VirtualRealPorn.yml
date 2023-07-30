@@ -1,0 +1,67 @@
+name: "VirtualRealPorn"
+sceneByURL:
+  - action: scrapeXPath
+    url: &urlSel
+      - virtualrealamateurporn.com
+      - virtualrealgay.com
+      - virtualrealjapan.com
+      - virtualrealpassion.com
+      - virtualrealporn.com
+      - virtualrealtrans.com
+    scraper: sceneScraper
+movieByURL:
+  - action: scrapeXPath
+    url: *urlSel
+    scraper: movieScraper
+xPathScrapers:
+  sceneScraper:
+    scene:
+      Title: &titleDef
+        selector: //h1[@class="titleVideo"]/text()
+        postProcess:
+          - replace:
+              - regex: VR [\s\w]+? video$
+                with: ""
+      Date: &dateAttr
+        selector: //div[@class="video-date"]/span
+        postProcess:
+          - parseDate: Jan 2, 2006
+      Details: &detailsSel
+        selector: //div[@class="g-cols onlydesktop"]//text()
+        concat: " "
+      Tags:
+        Name: //div[@class="metaHolder"]//a/span/text()
+      Performers:
+        Name:
+          selector: //h1[@class="titleVideo"]/following-sibling::p
+          postProcess:
+            - replace:
+                - regex: \s&\s
+                  with: ", "
+          split: ", "
+      Studio:
+        Name: &studioName
+          selector: //meta[@property="og:site_name"]/@content
+          postProcess:
+            - replace:
+                - regex: \.com
+                  with: ""
+            - map:
+                VirtualRealAmateurPorn: "VirtualRealAmateur"
+      Image: &imageSel //meta[@property="og:image"]/@content
+      Movies:
+        Name: &movieName
+          selector: //meta[@property="og:site_name"]/@content|//h1[@class="titleVideo"]
+          concat: " - "
+        Date: *dateAttr
+        Synopsis: *detailsSel
+        URL: //meta[@property="og:url"]/@content
+  movieScraper:
+    movie:
+      Name: *movieName
+      Date: *dateAttr
+      Studio:
+        Name: *studioName
+      Synopsis: *detailsSel
+      FrontImage: *imageSel
+# Last Updated August 14, 2022
